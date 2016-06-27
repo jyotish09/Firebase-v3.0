@@ -9,22 +9,39 @@
 	</head>
 	
 	<body>
-	<body ng-app="myApp" ng-controller="todo">
-
-	<h2>My Todo List</h2>
-
-		<form ng-submit="todoAdd()">
-			<input type="text" ng-model="todoInput" size="50" placeholder="Add New">
-			<input type="submit" value="Add New">
-		</form>
-
-		<br>
-
-		<div ng-repeat="x in todoList">
-			<input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
-		</div>
-
-		<p><button ng-click="remove()">Remove marked</button></p>
+	<body ng-app="myApp" ng-controller="todoCtrl">
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-brand ">Firebase v 3.0</div>
+	</div>
+		<div class="container">
+				<h2>ToDo(s)</h2>
+				<div class="jumbotron col-md-5">
+				<form ng-submit="todoAdd()">
+				<div class="form-group">
+					<input class="form-control"	type="text" ng-model="todoInput">
+					<br/>
+					<p>
+					<button class="btn btn-primary" type="submit" value="Add New">
+					<span class= "glyphicon glyphicon-plus-sign"></span>
+					</button>
+					</p>
+				</div>
+				</form>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="jumbotron col-md-5">
+				<div >
+				<div ng-repeat="x in todoList">
+					<input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+				</div>
+				<br/>
+				<p>
+				<button class="btn btn-danger" ng-click="remove()">
+				<span class="glyphicon glyphicon-remove-sign"></span>
+				</button></p>
+				</div>
+		
+	</div>	
 	</body>
 	<script src="app.js"></script>
 </html>
