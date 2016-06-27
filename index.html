@@ -1,0 +1,30 @@
+<!DOCTYPE">
+<html>
+	<head>
+		<title>FireBase Test</title>
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	</head>
+	
+	<body>
+	<body ng-app="myApp" ng-controller="todo">
+
+	<h2>My Todo List</h2>
+
+		<form ng-submit="todoAdd()">
+			<input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+			<input type="submit" value="Add New">
+		</form>
+
+		<br>
+
+		<div ng-repeat="x in todoList">
+			<input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+		</div>
+
+		<p><button ng-click="remove()">Remove marked</button></p>
+	</body>
+	<script src="app.js"></script>
+</html>
